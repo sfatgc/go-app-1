@@ -4,5 +4,5 @@ ADD go.mod main.go ./
 RUN go build -o app
 
 FROM gcr.io/distroless/static AS final
-COPY --from=build --chown=nonroot:nonroot /go-app-1 /app
+COPY --from=build --chown=nonroot:nonroot /app /app
 ENTRYPOINT ["/app"]
