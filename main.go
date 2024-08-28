@@ -12,7 +12,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
 func heavy_request(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Handling heavy workload...\n")
-	time.Sleep(15)
+	time.Sleep(15 * time.Second)
 	fmt.Fprintf(w, "...successfully handled heavy workload\n")
 }
 
